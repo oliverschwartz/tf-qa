@@ -9,6 +9,9 @@
   - annotations - a JSON array containing all of the correct long + short answers. Only provided for train.
   - document_url - the URL for the full article. Provided for informational purposes only. This is NOT the simplified version of the article so indices from this cannot be used directly. The content may also no longer match the html used to generate document_text. Only provided for train.
   - example_id - unique ID for the sample.
+  
+### Evaluation
+Submissions are evaluated using (micro F1)[https://en.wikipedia.org/wiki/F1_score] between predicted and expected answers. Predicted long and short answers must match exactly the token indices of one of the ground truth labels ((or match YES/NO if the question has a yes/no short answer). There may be up to five labels for long answers, and more for short. If no answer applies, leave the prediction blank/null.
 
 ### Resources
 - Starter notebook with BERT: https://www.kaggle.com/philculliton/using-tensorflow-2-0-w-bert-on-nq
